@@ -1,0 +1,57 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData"
+    xmlns:ux="http://www.sap.com/Protocols/OData4SAP/UX"
+    xmlns:gp="http://www.sap.com/Protocols/SAPData/GenericPlayer">
+    <edmx:DataServices m:DataServiceVersion="2.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="ZGW_LIBERACION_HES_SRV"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" xml:lang="en">
+            <EntityType Name="TRelSesH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lblni"/>
+                </Key>
+                <Property Name="Lblni" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Entry Sheet"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Created by"/>
+                <Property Name="Erdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Created on"/>
+                <Property Name="Lwert" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:unit="Waers" sap:label="Gross Value"/>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code" sap:label="Currency"/>
+                <Property Name="Packno" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Package number"/>
+                <Property Name="Txz01" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Short Text"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Purchasing Doc."/>
+                <Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Item"/>
+                <Property Name="Bldat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Document Date"/>
+                <Property Name="Budat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Posting Date"/>
+                <Property Name="Xblnr" Type="Edm.String" Nullable="false" MaxLength="16" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Reference"/>
+                <Property Name="Bktxt" Type="Edm.String" Nullable="false" MaxLength="25" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Doc. Header Txt"/>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Vendor"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Name 1"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Name 2"/>
+            </EntityType>
+            <EntityType Name="TRelSesD" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lblni"/>
+                    <PropertyRef Name="Packno"/>
+                    <PropertyRef Name="Extrow"/>
+                </Key>
+                <Property Name="Lblni" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Entry Sheet"/>
+                <Property Name="Packno" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Package number"/>
+                <Property Name="Extrow" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Line Number"/>
+                <Property Name="Srvpos" Type="Edm.String" Nullable="false" MaxLength="18" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Service"/>
+                <Property Name="SubPackno" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Package"/>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure" sap:label="Base Unit"/>
+                <Property Name="Netwr" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Net Value"/>
+                <Property Name="Ktext1" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:label="Short Text 1"/>
+                <Property Name="ActMenge" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:unit="Meins" sap:label="Actual Quantity"/>
+            </EntityType>
+            <EntityContainer Name="ZGW_LIBERACION_HES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="TRelSesHSet" EntityType="ZGW_LIBERACION_HES_SRV.TRelSesH" sap:content-version="1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"/>
+                <EntitySet Name="TRelSesDSet" EntityType="ZGW_LIBERACION_HES_SRV.TRelSesD" sap:content-version="1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://gwaas-dff018823.us2.hana.ondemand.com:443/odata/SAP/ZGW_LIBERACION_HES_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://gwaas-dff018823.us2.hana.ondemand.com:443/odata/SAP/ZGW_LIBERACION_HES_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

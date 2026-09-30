@@ -1,0 +1,55 @@
+{
+	
+		"cadena": [{	
+			"codigo":"HES1000000255",
+			"descripcion":"Preparation: Configuration",
+			"quantity":"5",
+			"subtotal":"1.750,00",
+			"status":"Bellow Plan"
+		},
+		{
+			"codigo":"HES1000000255",
+			"descripcion":"Process Analysis",
+			"quantity":"200",
+			"subtotal":"60.000,00",
+			"status":"Bellow Plan"
+		},
+		{	"codigo":"HES1000000255",
+			"descripcion":"Business Alignment",
+			"quantity":"20",
+			"subtotal":"8.000,00",
+			"status":"As Planned"
+		},
+		{	"codigo":"HES1000000255",
+			"descripcion":"Setup SandBox",
+			"quantity":"1.2",
+			"subtotal":"6.000,00",
+			"status":"Above Plan"
+	}, {	
+			"codigo":"HES1000000257",
+			"descripcion":"Preparation: Configuration",
+			"quantity":"5",
+			"subtotal":"1.750,00",
+			"status":"Bellow Plan"
+		},
+		{	"codigo":"HES1000000257",
+			"descripcion":"Process Analysis",
+			"quantity":"200",
+			"subtotal":"60.000,00",
+			"status":"Bellow Plan"
+		},
+		{	
+			"codigo":"HES1000000257",
+			"descripcion":"Business Alignment",
+			"quantity":"20",
+			"subtotal":"8.000,00",
+			"status":"As Planned"
+		},
+		{	
+			"codigo":"HES1000000257",
+			"descripcion":"Setup SandBox",
+			"quantity":"1.2",
+			"subtotal":"6.000,00",
+			"status":"Above Plan"
+		}]
+}

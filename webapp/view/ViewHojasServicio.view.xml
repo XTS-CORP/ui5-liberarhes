@@ -1,0 +1,181 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:l="sap.ui.layout"
+xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:f="sap.ui.layout.form" xmlns="sap.m" controllerName="LiberacionHES.controller.ViewHojasServicio" displayBlock="true">
+	<App id="App">
+		<pages>
+			<Page title="Hojas de servicio" navButtonPress="NavPres" showNavButton="true" showFooter="false" showHeader="false" icon="sap-icon://refresh">
+				<content>
+					<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+						<masterPages>
+							<Page id="master2" title="Hojas de Servicio ({proveedor>/TRelSesHSet/length})" icon="sap-icon://refresh" class="sapUiStdPage" showNavButton="false">
+										<headerContent>
+								<Button icon="sap-icon://refresh" id="IdButton" press="refreshList" />
+							</headerContent>
+												
+						
+								<content>
+									<SearchField search="onSearch" width="100%" placeholder="Buscar servicio ..."/>
+									<List id="ProductList" items="{proveedor>/TRelSesHSet}" selectionChange="onSelectionChange">
+										<ObjectListItem title="{proveedor>Name1}" type="Active" number="{proveedor>Lwert}" numberUnit="{proveedor>Waers}" numberState="Success" busyIndicatorDelay="2000" press="onListItemPress">
+											<firstStatus>
+												<ObjectStatus text="{path: 'proveedor>Bldat', type: 'sap.ui.model.type.Date',formatOptions: { style: 'short', UTC: true}             }"/>
+											</firstStatus>
+											<attributes>
+												<ObjectAttribute title="HES" text="{proveedor>Lblni}"/>
+													<ObjectAttribute title="Doc.compras" text="{proveedor>Ebeln}"/>
+													<ObjectAttribute title="" text="{proveedor>Ernam}"/>
+											</attributes>
+											
+										</ObjectListItem>
+									</List>
+									<!--includeItemInSelection="true"-->
+									<!--	<List id="idList" items="{galpon>/TCampanaSet}" selectionChange="onSelectionChange" itemPress="onPressDcData" includeItemInSelection="true">
+										<items>
+											<StandardListItem type="Navigation" press="onListItemPress" title="Orden : {galpon>Aufnr} - {galpon>Producto}"
+												description="Número de galpón : {galpon>Galpon}" icon="imagenes/santaelena.gif" iconDensityAware="false" iconInset="false"/>
+										</items>
+									</List>-->
+								</content>
+								<footer id="idfooter2">
+									<OverflowToolbar id="otbFooter2" icon="sap-icon://save">
+										<!--
+										<ToolbarSpacer/>
+											<Button  icon="sap-icon://sort">
+										</Button>
+										-->
+									</OverflowToolbar>
+								</footer>
+							</Page>
+						</masterPages>
+						<detailPages>
+							<Page id="detail" title="Hojas de servicio" class="sapUiStdPage" showNavButton="{device>/isPhone}" navButtonPress="handleNavButtonPress">
+								<!--
+								<customHeader>
+									<Bar>
+										<contentMiddle>
+											<Title level="H2" id="tituloId"/>
+										</contentMiddle>
+									</Bar>
+								</customHeader>
+								-->
+								<!--<ObjectHeader id="oh1" responsive="true" fullScreenOptimized="true" icon="imagenes/santaElenaFondo2.fw.png" iconAlt="Galpón :" intro="Orden de pedido : {galpon>Aufnr}" title="Galpón : Nro. {galpon>Galpon}" titlePress="handleTitlePress" number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }" numberUnit="{CurrencyCode}" showMarkers="true" markFlagged="true" markFavorite="true" numberState="Success" backgroundDesign="Translucent">
+									<attributes>
+										<ObjectAttribute id="centroAttribute" title="Centro " text="{galpon>Werks}"/>
+										<ObjectAttribute id="campanattribute" title="Campaña " text="{galpon>Campana}"/>
+										<ObjectAttribute id="granjaAttribute" title="Granja " text="{galpon>Granja}"/>
+										<ObjectAttribute id="productAttribute" title="Producto " text="{galpon>Producto}"/>
+										<ObjectAttribute id="fechaInAttribute" title="Fecha inicio" text="{galpon>FecIni}"/>
+										<ObjectAttribute id="fechaFiAttribute" title="Fecha fin" text="{galpon>FecFin}"/>
+										<ObjectAttribute id="galponAttribute" title="Galpon" text="{galpon>Galpon}"/>
+									</attributes>
+									<statuses>	
+										<ObjectStatus title="Estado" text="Activo" state="Success"/>
+									</statuses>
+								</ObjectHeader>-->
+								<ObjectHeader id="oh1" responsive="true" title="{proveedor>Name1}" number="{proveedor>Lwert}" numberUnit="{proveedor>Waers}">
+									<firstStatus>
+										<ObjectStatus text="Creado el : {path: 'proveedor>Erdat', type: 'sap.ui.model.type.Date',                formatOptions: { style: 'medium', UTC: true}                }"/>
+									</firstStatus>
+									<attributes>
+										<ObjectAttribute title="Hoja de entrada " text="{proveedor>Lblni}" id="attribute2"/>
+										<ObjectAttribute title="ID " text="{proveedor>WiId}" id="attribute1"/>
+										<ObjectAttribute title="Doc.compras " text="{proveedor>Ebeln}"/>
+									</attributes>
+									<headerContainer>
+										<IconTabBar id="itb1" upperCase="true">
+											<items>
+												<IconTabFilter icon="sap-icon://hint" key="Ok">
+													<content>
+														<f:SimpleForm id="SimpleFormDisplay354wide">
+															<f:content>
+																<Label text="Creado por:"/>
+																<Text text="{proveedor>Ernam}"/>
+																<Label text="Valor bruto:"/>
+																<!--<Text text="{proveedor>Lwert}"/>-->
+																<ObjectNumber number="{proveedor>Lwert}" unit="{proveedor>Waers}"/>
+																<Label text="Posición:"/>
+																<Text text="{proveedor>Ebelp}"/>
+																<Label text="Penalidades:"/>
+																<Text text="{proveedor>ZzpenT}"/>
+																<Label text="Texto Breve:"/>
+																<Text id="textImporte" text="{proveedor>Txz01}"/>
+																<Label text="Fecha documento:"/>
+																<Text text="{path: 'proveedor>Bldat', type: 'sap.ui.model.type.Date',                formatOptions: { style: 'full', UTC: true}                }"/>
+																<Label text="Fe.contabiliz.:"/>
+																<Text text="{path: 'proveedor>Budat', type: 'sap.ui.model.type.Date',                formatOptions: { style: 'full', UTC: true}                }"/>
+																<Label text="Acreedor:"/>
+																<Text text="{proveedor>Lifnr}"/>
+																
+															</f:content>
+														</f:SimpleForm>
+													</content>
+												</IconTabFilter>
+												<!--
+												<IconTabFilter icon="sap-icon://attachment" key="Ok">
+													<content></content>
+												</IconTabFilter>
+												-->
+												<IconTabFilter id="iconTexto" icon="sap-icon://accelerated" key="Ok">
+													<content>
+														<f:SimpleForm id="simpleForm2">
+															<f:content>
+																<Label text="Texto:"/>
+																<Text text="{proveedor>TxtExp}"/>
+																</f:content>
+														</f:SimpleForm>
+													</content>
+												</IconTabFilter>
+											</items>
+										</IconTabBar>
+									</headerContainer>
+								</ObjectHeader>
+								<Table id="idProductsTable" items="{desc>/TRelSesDSet}">
+									<headerToolbar>
+										<Toolbar>
+											<Title id="titleSub" text="Líneas de servicio" level="H2"/>
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Descripción"/>
+										</Column>
+										<Column minScreenWidth="Tablet" demandPopin="true">
+											<Text text="Cantidad"/>
+										</Column>
+										<Column minScreenWidth="Tablet" demandPopin="true">
+											<Text text="Subtotal"/>
+										</Column>
+										<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+											<Text text="Nro. Servicio"/>
+										</Column>
+										
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{desc>Ktext1}"/>
+												
+												<ObjectNumber number="{desc>ActMenge}" unit="{desc>Meins}"/>
+												<ObjectNumber number="{desc>Netwr}" id="objNumber"/>
+												<Text text="{desc>Srvpos}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<content/>
+								<footer id="idfooter">
+									<OverflowToolbar id="otbFooter" icon="sap-icon://save">
+										<ToolbarSpacer/>
+										<Button text="Aprobar" id="btnAprobarr" press="onDialog" type="Accept">
+										</Button>
+									
+									</OverflowToolbar>
+								</footer>
+							</Page>
+						</detailPages>
+						
+					</SplitApp>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

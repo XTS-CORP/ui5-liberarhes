@@ -1,0 +1,33 @@
+<ObjectHeader id="oh1" responsive="true" fullScreenOptimized="true" intro="{Description}" title="{proveedor>Nombre}"
+												number="{proveedor>numero}" numberUnit="{proveedor>moneda}" showMarkers="true" markFlagged="true" markFavorite="true" numberState="Success"
+												backgroundDesign="Translucent">
+												<attributes>
+													<ObjectAttribute title="Codigo " text="{proveedor>codigo}"/>
+												</attributes>
+												<statuses>
+													<ObjectStatus title="Approval" text="{proveedor>srl}" />
+													<ObjectStatus title="Approval" text="{proveedor>codigo}" />
+												</statuses>
+													<headerContainer>
+									<IconTabBar id="itb1"  upperCase="true" class="sapUiResponsiveContentPadding">
+										<items>
+											<IconTabFilter icon="sap-icon://form"
+													iconColor="Positive"
+													text="Detalle"
+													key="Ok">
+												<content>
+												
+												</content>
+											</IconTabFilter>
+											<IconTabFilter icon="sap-icon://attachment-e-pub"
+													iconColor="Negative"
+													text="Anexo"
+													key="Ok">
+												<content>
+												
+												</content>
+											</IconTabFilter>
+												</items>
+												</IconTabBar>
+												</headerContainer>
+											</ObjectHeader>

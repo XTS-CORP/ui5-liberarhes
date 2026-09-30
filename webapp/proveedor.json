@@ -1,0 +1,85 @@
+{
+	"ProveedorColeccion": [{
+		"Nombre": "HES pruba Estrategia Lib",
+		"srl": "CODISBA SRL",
+		"numero": "250.00",
+		"moneda":"PEN",
+		"codigo":"HES1000000255",
+		"service":"1000000255",
+		"external":"SERVICE ON DEC",
+		"purchase":"470008117/10",
+		"location":"Berlin Office",
+		"period":"01.12.2017 - 12.12.2017",
+		"plant":"Werk 001 (001)",
+		"account":"CBC001",
+		"percentagem":18,
+		"consumed":"124.750,00",
+		"planned":"675.500,00",
+		"limit":"500.000,00",
+		"descrip": [{	
+			"descripcion":"Preparation: Configuration",
+			"quantity":"5",
+			"subtotal":"1.750,00",
+			"status":"Bellow Plan"
+		},
+		{	
+			"descripcion":"Process Analysis",
+			"quantity":"200",
+			"subtotal":"60.000,00",
+			"status":"Bellow Plan"
+		},
+		{	
+			"descripcion":"Business Alignment",
+			"quantity":"20",
+			"subtotal":"8.000,00",
+			"status":"As Planned"
+		},
+		{	
+			"descripcion":"Setup SandBox",
+			"quantity":"1.2",
+			"subtotal":"6.000,00",
+			"status":"Above Plan"
+		}]
+	}, {
+		"Nombre": "HES pruba Estrategia liberación",
+		"srl": "CODISBA SRL",
+		"numero": "500.00",
+		"moneda":"PEN",
+		"codigo":"HES1000000257",
+		"service":"1000000255",
+		"external":"SERVICE ON DEC",
+		"purchase":"470008117/10",
+		"location":"Berlin Office",
+		"period":"01.12.2017 - 12.12.2017",
+		"plant":"Werk 001 (001)",
+		"account":"CBC001",
+		"percentagem":45,
+		"consumed":"124.750,00",
+		"planned":"675.500,00",
+		"limit":"500.000,00",
+		"descrip": [{	
+			"descripcion":"Preparation: Configuration",
+			"quantity":"5",
+			"subtotal":"1.750,00",
+			"status":"Bellow Plan"
+		},
+		{	
+			"descripcion":"Process Analysis",
+			"quantity":"200",
+			"subtotal":"60.000,00",
+			"status":"Bellow Plan"
+		},
+		{	
+			"descripcion":"Business Alignment",
+			"quantity":"20",
+			"subtotal":"8.000,00",
+			"status":"As Planned"
+		},
+		{	
+			"descripcion":"Setup SandBox",
+			"quantity":"1.2",
+			"subtotal":"6.000,00",
+			"status":"Above Plan"
+		}]
+	}]
+}
