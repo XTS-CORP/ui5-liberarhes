@@ -117,7 +117,7 @@
 			},
 			"routes": [
 				{
-					"pattern": "",
+					"pattern": "ViewHojasServicio",
 					"name": "ViewHojasServicio",
 					"target": "ViewHojasServicio"
 				}

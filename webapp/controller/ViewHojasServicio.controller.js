@@ -20,13 +20,11 @@ sap.ui.define([
 		onInit: function() {
 			this.getRouter().getRoute("ViewHojasServicio").attachMatched(this._onRouteMatched, this);
 			
-			
-			
-			
 			var deviceModel = new sap.ui.model.json.JSONModel({
 				    isPhone: sap.ui.Device.system.phone
 				});
 			this.getView().setModel(deviceModel, "device");
+			this._onRouteMatched();
 		},
 		_onRouteMatched : function (oEvent) {
 			// create model
@@ -42,8 +40,11 @@ sap.ui.define([
 			boton.setVisible(false);	
 			var idProductsTable = this.getView().byId("idProductsTable");
 			idProductsTable.setVisible(false);	
-			var count = this.getView().byId("ProductList").getBinding("items").getLength();
-			this.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
+			var oBinding = this.getView().byId("ProductList").getBinding("items");
+			if (oBinding) {
+				var count = oBinding.getLength();
+				this.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
+			}
 			
 			
 		},
