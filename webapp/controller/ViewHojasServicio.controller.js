@@ -27,12 +27,8 @@ sap.ui.define([
 			this._onRouteMatched();
 		},
 		_onRouteMatched : function (oEvent) {
-			// create model
-			var oModel = new sap.ui.model.odata.ODataModel("/GWaaS/odata/SAP/ZGW_LIBERACION_HES_SRV/", {
-				json: true,
-				useBatch: false
-			});
-			this.getView().setModel(oModel,"proveedor");
+			var oModel = this.getOwnerComponent().getModel();
+			this.getView().setModel(oModel, "proveedor");
 			//			load data from URL
 			var header = this.getView().byId("oh1");
 			header.setVisible(false);	
@@ -90,11 +86,8 @@ sap.ui.define([
 				path: sPath,
 				model: "proveedor"
 			});
-			var oModel = new sap.ui.model.odata.ODataModel("/GWaaS/odata/SAP/ZGW_LIBERACION_HES_SRV/", {
-				json: true,
-				useBatch: false
-			});
-			 this.getView().byId("objNumber").setUnit(""+sPathII);
+			var oModel = this.getOwnerComponent().getModel();
+			this.getView().byId("objNumber").setUnit(""+sPathII);
 			wVista.setModel(oModel, "desc");
 			var filter = new sap.ui.model.Filter("Packno", sap.ui.model.FilterOperator.EQ, sPathI);
 			var idProductsTable = this.getView().byId("idProductsTable");
@@ -166,10 +159,7 @@ sap.ui.define([
 			var datos = {};
 			datos.Lblni =Lblni;
 			datos.WiId =WiId;
-			var oModel = new sap.ui.model.odata.ODataModel("/GWaaS/odata/SAP/ZGW_LIBERACION_HES_SRV/", {
-				json: true,
-				useBatch: false
-			});
+			var oModel = this.getOwnerComponent().getModel();
 			oModel.create("/TRelSesHSet", datos, {
 					method: "POST",
 					success: function(data) {

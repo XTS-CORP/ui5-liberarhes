@@ -15,7 +15,7 @@
 		},
 		"dataSources": {
 			"ZGW_LIBERACION_HES_SRV": {
-				"uri": "/sap/opu/odata/SAP/ZGW_LIBERACION_HES_SRV/",
+				"uri": "/GWaaS/odata/SAP/ZGW_LIBERACION_HES_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -87,6 +87,12 @@
 			"cozy": true
 		},
 		"models": {
+			"": {
+				"dataSource": "ZGW_LIBERACION_HES_SRV",
+				"settings": {
+					"useBatch": false
+				}
+			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
