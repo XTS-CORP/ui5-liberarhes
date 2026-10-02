@@ -78,7 +78,6 @@
 				"sap.m": {},
 				"sap.ui.layout": {},
 				"sap.ushell": {},
-				"sap.collaboration": {},
 				"sap.ui.comp": {},
 				"sap.uxap": {}
 			}
@@ -126,6 +125,6 @@
 	},
 	"sap.cloud": {
 		"public": true,
-		"service": "liberarhes"
+		"service": "liberacionhes"
 	}
 }
