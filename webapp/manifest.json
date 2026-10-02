@@ -36,8 +36,8 @@
 					},
                     "indicatorDataSource": {
                         "dataSource": "ZGW_LIBERACION_HES_SRV",
-                        "path": "/TRelSesHSet/$count",
-                        "refresh": 3000,
+                        "path": "TRelSesHSet/$count",
+                        "refresh": 60,
                         "displayNumberUnit": ""
                     }
 				}
