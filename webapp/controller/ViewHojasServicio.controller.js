@@ -8,12 +8,14 @@ sap.ui.define([
 	"sap/ui/Device",
 	"sap/m/Button",
 	"sap/ui/model/Filter",
-	"sap/m/MessageBox"
+	"sap/m/MessageBox",
+	"LiberacionHES/model/formatter"
 	
-], function(Controller,JSONModel,Dialog, Label,TextArea,MessageToast,Device,Button,Filter,MessageBox) {
+], function(Controller,JSONModel,Dialog, Label,TextArea,MessageToast,Device,Button,Filter,MessageBox, formatter) {
 	"use strict";
 
 	return Controller.extend("LiberacionHES.controller.ViewHojasServicio", {
+		formatter: formatter,
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},

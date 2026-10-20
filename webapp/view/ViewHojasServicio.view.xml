@@ -15,7 +15,7 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 								<content>
 									<SearchField search="onSearch" width="100%" placeholder="Buscar servicio ..."/>
 									<List id="ProductList" items="{proveedor>/TRelSesHSet}" selectionChange="onSelectionChange">
-										<ObjectListItem title="{proveedor>Name1}" type="Active" number="{proveedor>Lwert}" numberUnit="{proveedor>Waers}" numberState="Success" busyIndicatorDelay="2000" press="onListItemPress">
+										<ObjectListItem title="{proveedor>Name1}" type="Active" number="{path: 'proveedor>Lwert', formatter: '.formatter.formatMonto'}" numberUnit="{proveedor>Waers}" numberState="Success" busyIndicatorDelay="2000" press="onListItemPress">
 											<firstStatus>
 												<ObjectStatus text="{path: 'proveedor>Bldat', type: 'sap.ui.model.type.Date',formatOptions: { style: 'short', UTC: true}             }"/>
 											</firstStatus>
@@ -71,7 +71,7 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 										<ObjectStatus title="Estado" text="Activo" state="Success"/>
 									</statuses>
 								</ObjectHeader>-->
-								<ObjectHeader id="oh1" responsive="true" title="{proveedor>Name1}" number="{proveedor>Lwert}" numberUnit="{proveedor>Waers}">
+								<ObjectHeader id="oh1" responsive="true" title="{proveedor>Name1}" number="{path: 'proveedor>Lwert', formatter: '.formatter.formatMonto'}" numberUnit="{proveedor>Waers}">
 									<firstStatus>
 										<ObjectStatus text="Creado el : {path: 'proveedor>Erdat', type: 'sap.ui.model.type.Date',                formatOptions: { style: 'medium', UTC: true}                }"/>
 									</firstStatus>
@@ -91,7 +91,7 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 																<Text text="{proveedor>Ernam}"/>
 																<Label text="Valor bruto:"/>
 																<!--<Text text="{proveedor>Lwert}"/>-->
-																<ObjectNumber number="{proveedor>Lwert}" unit="{proveedor>Waers}"/>
+																<ObjectNumber number="{path: 'proveedor>Lwert', formatter: '.formatter.formatMonto'}" unit="{proveedor>Waers}"/>
 																<Label text="Posición:"/>
 																<Text text="{proveedor>Ebelp}"/>
 																<Label text="Penalidades:"/>
@@ -154,8 +154,8 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 											<cells>
 												<Text text="{desc>Ktext1}"/>
 												
-												<ObjectNumber number="{desc>ActMenge}" unit="{desc>Meins}"/>
-												<ObjectNumber number="{desc>Netwr}" id="objNumber"/>
+												<ObjectNumber number="{path: 'desc>ActMenge', formatter: '.formatter.formatMonto'}" unit="{desc>Meins}"/>
+												<ObjectNumber number="{path: 'desc>Netwr', formatter: '.formatter.formatMonto'}" id="objNumber"/>
 												<Text text="{desc>Srvpos}"/>
 											</cells>
 										</ColumnListItem>
