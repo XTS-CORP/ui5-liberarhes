@@ -6,7 +6,7 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 				<content>
 					<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
 						<masterPages>
-							<Page id="master2" title="Hojas de Servicio ({proveedor>/TRelSesHSet/length})" icon="sap-icon://refresh" class="sapUiStdPage" showNavButton="false">
+							<Page id="master2" title="Hojas de Servicio (0)" icon="sap-icon://refresh" class="sapUiStdPage" showNavButton="false">
 										<headerContent>
 								<Button icon="sap-icon://refresh" id="IdButton" press="refreshList" />
 							</headerContent>
@@ -14,7 +14,7 @@ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 						
 								<content>
 									<SearchField search="onSearch" width="100%" placeholder="Buscar servicio ..."/>
-									<List id="ProductList" items="{proveedor>/TRelSesHSet}" selectionChange="onSelectionChange">
+									<List id="ProductList" items="{proveedor>/TRelSesHSet}" selectionChange="onSelectionChange" updateFinished="onListUpdateFinished">
 										<ObjectListItem title="{proveedor>Name1}" type="Active" number="{path: 'proveedor>Lwert', formatter: '.formatter.formatMonto'}" numberUnit="{proveedor>Waers}" numberState="Success" busyIndicatorDelay="2000" press="onListItemPress">
 											<firstStatus>
 												<ObjectStatus text="{path: 'proveedor>Bldat', type: 'sap.ui.model.type.Date',formatOptions: { style: 'short', UTC: true}             }"/>

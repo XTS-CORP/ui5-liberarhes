@@ -37,14 +37,11 @@ sap.ui.define([
 			var boton = this.getView().byId("btnAprobarr");
 			boton.setVisible(false);	
 			var idProductsTable = this.getView().byId("idProductsTable");
-			idProductsTable.setVisible(false);	
-			var oBinding = this.getView().byId("ProductList").getBinding("items");
-			if (oBinding) {
-				var count = oBinding.getLength();
-				this.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
-			}
-			
-			
+			idProductsTable.setVisible(false);
+		},
+		onListUpdateFinished: function(oEvent) {
+			var iTotal = oEvent.getParameter("total") || 0;
+			this.getView().byId("master2").setTitle("Hojas de Servicio (" + iTotal + ")");
 		},
 		onSearch : function (oEvt) {
  
@@ -63,8 +60,6 @@ sap.ui.define([
 		},
 			refreshList: function(oEvent) {
 			this.getView().byId("ProductList").getBinding("items").refresh(true);
-			var count = this.getView().byId("ProductList").getBinding("items").getLength();
-			this.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
 			},
 			onListItemPress: function(oEvent) {
 			var wVista = this.getView();
@@ -166,8 +161,6 @@ sap.ui.define([
 					method: "POST",
 					success: function(data) {
 							oThis.getView().byId("ProductList").getBinding("items").refresh(true);
-								var count = oThis.getView().byId("ProductList").getBinding("items").getLength();
-									oThis.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
 									var header = oThis.getView().byId("oh1");
 									header.setVisible(false);	
 									var boton = oThis.getView().byId("btnAprobarr");
@@ -196,8 +189,6 @@ sap.ui.define([
 					}.bind(this),
 						error: function(data) {
 								oThis.getView().byId("ProductList").getBinding("items").refresh(true);
-									var count = oThis.getView().byId("ProductList").getBinding("items").getLength();
-									oThis.getView().byId("master2").setTitle("Hojas de Servicio (" + count + ")");
 									var header = oThis.getView().byId("oh1");
 									header.setVisible(false);	
 									var boton = oThis.getView().byId("btnAprobarr");
