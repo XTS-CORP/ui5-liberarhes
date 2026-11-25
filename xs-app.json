@@ -5,7 +5,7 @@
     {
       "source": "^/GWaaS/odata/SAP/(.*)$",
       "target": "/sap/opu/odata/SAP/$1",
-      "destination": "destination_ecc",
+      "destination": "pp_ecc",
       "authenticationType": "none",
       "csrfProtection": false
     },
